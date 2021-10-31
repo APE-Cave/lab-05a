@@ -84,29 +84,14 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  let stringaling = '';
-  let last = sumArr.length - 1;
-
-  for (let i=0; i<sumArr.length; i++) { // concats string from sumArr values
-    stringaling += sumArr[i];
-    if (i === last) break;
-    else stringaling += ","
-  }
-  console.log(stringaling);
-  // for (let i=0; i < summing.length - 1; i++) {
-  //   let first = summing[i];
-  //   let next = summing[i+1];
-  //   let tempSumArray = sum(first, next);
-  //   summing[i+1] = tempSumArray[0];
-  // }
-  // let answer = [summing[last], `${sumArr} was passed in as an array of numbers, and ${summing[last]} is their sum.`];
-  // console.log(answer);
-  // return [summing[last], `${sumArr} was passed in as an array of numbers, and ${summing[last]} is their sum`];
+  let adder = 0;
+  for (let i=0; i < sumArr.length; i++) adder = sum(adder, sumArr[i])[0];
+  return [adder, `${sumArr} was passed in as an array of numbers, and ${adder} is their sum.`];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-//testSumArray(testArray);
+ testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
